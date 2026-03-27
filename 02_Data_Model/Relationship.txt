@@ -1,1 +1,94 @@
+#Table Relationships - Swiggy SQL Project
 
+Overview
+
+This database follows a star schema design, where the central fact table "fact_swiggy_orders" is connected to multiple dimension tables. Each dimension provides descriptive context to the transactional data.
+
+
+1. Fact Table
+
+"fact_swiggy_orders"
+
+This is the central table storing transactional order data.
+
+Primary Key:
+"order_id"
+
+Foreign Keys:
+
+ "restaurant_id" → "dim_restaurant.restaurant_id"
+ "location_id" → "dim_location.location_id"
+ "category_id" → "dim_category.category_id"
+ "dish_id" → "dim_dish.dish_id"
+ "date_id" → "dim_date.date_id"
+
+
+2. Dimension Tables & Relationships
+
+"dim_restaurant"
+
+- Stores restaurant details
+- Relationship: One restaurant can have many orders
+- Type: One-to-Many (1:N)
+- "dim_restaurant.restaurant_id" → "fact_swiggy_orders.restaurant_id"
+
+
+"dim_location"
+
+- Stores geographic data (state, city, location)
+- Relationship: One location can have many orders
+- Type: One-to-Many (1:N)
+- "dim_location.location_id" → "fact_swiggy_orders.location_id"
+
+
+"dim_category"
+
+- Stores food category (e.g., veg, non-veg, cuisine types)
+- Relationship: One category can have many orders
+- Type: One-to-Many (1:N)
+- "dim_category.category_id" → "fact_swiggy_orders.category_id"
+
+
+"dim_dish"
+
+- Stores dish-level details
+- Relationship: One dish can appear in many orders
+- Type: One-to-Many (1:N)
+- "dim_dish.dish_id" → "fact_swiggy_orders.dish_id"
+
+
+"dim_date"
+
+- Stores date-related attributes (year, month, quarter, etc.)
+- Relationship: One date can have many orders
+- Type: One-to-Many (1:N)
+- "dim_date.date_id" → "fact_swiggy_orders.date_id"
+
+
+3. Audit Table
+
+"order_audit"
+
+- Stores changes made to order pricing (via triggers)
+- Captures historical changes for tracking and debugging
+
+Columns:
+
+- "order_id"
+- "old_price"
+- "new_price"
+- "change_date"
+
+Relationship:
+
+- One order can have multiple audit records
+- Type: One-to-Many (1:N)
+- "fact_swiggy_orders.order_id" → "order_audit.order_id"
+
+
+4. Key Benefits of Design
+
+- Simplifies analytical queries
+- Improves query performance
+- Supports scalable reporting
+- Enables tracking of historical changes via audit table

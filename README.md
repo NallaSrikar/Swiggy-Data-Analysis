@@ -1,6 +1,6 @@
 # Swiggy-Data-Analysis
 
-This Project Focuses on analyzing swiggy data. The project transforms raw Swiggy delivery data into a structured Star Schema, implementing advanced data cleaning, ETL processes, and analytical querying to derive business insights.
+This Project Focuses on analyzing swiggy data. The project transforms raw Swiggy delivery data into a structured Star Schema, implementing advanced data cleaning, ETL processes, and analytical querying to derive business insights.Designing and devoloping interactive Dashboard using Tableau to visualize the insights.
 
 ## Project Overview
 
@@ -14,6 +14,8 @@ The objective of this project is to analyze Swiggy's food ordering patterns, res
 
 **Advanced Analytics:** Using Window Functions, Indexes, CTEs, Triggers and Stored Procedures for business KPIs.
 
+**Dashboard Creation:** Designing and creating interactive dashboard
+
 ## Objectives
 
 1.Clean Raw Data and Create Data Model
@@ -26,9 +28,9 @@ The objective of this project is to analyze Swiggy's food ordering patterns, res
 
 5.Evaluate category-wise performance and customer Behavior 
 
-6.Optimize query performance
+6.Optimize query performance and build dashboard to visualize insights
 
-## Data MOdel
+## Data Model
 
 The project follows a Star Schema design to ensure efficient querying and clear data relationships.
 
@@ -86,6 +88,14 @@ This is the core of the project, focusing on four key areas:
 
 **Views** (Views.sql): Abstracted complex joins into simple views for stakeholders (e.g., vw_state_analysis).
 
+**6. Dashboard Building:** 
+
+**KPIs:** Defined and tracked key KPIs like Reveue, Orders, AOV and Average Rating
+
+**Calculated Fields:** created calculated fileds to measure month over month performance and key business insights
+
+**Dashboard:** Built an interactive dashboard to analyze revenue, growth trends, peak order days and rop restaurants
+
 ## 📊 Key Business Insights Derived
 
 **Revenue Trends:** 
@@ -126,6 +136,8 @@ Tracked "Data Issues" (invalid rating counts) and flaged to improve future data 
 
 **Concepts:** Star Schema, CURD Operations, CTEs, Window Functions (LAG, RANK, SUM OVER), Stored Procedures, Triggers, Views, and Indexing.
 
+**BI Tool:** Tableau
+
 ## How to Run the Project
 
 Import Swiggy Raw Data into SQL server and Perfrom Data Cleaning 
@@ -141,3 +153,8 @@ Run Views.sql for analysis layer
 Run Procedures.sql, Triggers.sql
 
 Use Analysis.sql for advanced queries 
+
+## Dashboard
+
+**Live Dashboard**
+[view Dashboard](https://public.tableau.com/app/profile/srikar.nalla/viz/SwiggyDataAnalysisDashboard/Dashboard1?publish=yes)

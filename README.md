@@ -156,5 +156,8 @@ Use Analysis.sql for advanced queries
 
 ## Dashboard
 
+![image](Tableau_Dashboard/Dashboard.JPG)
+
 **Live Dashboard**
+
 [view Dashboard](https://public.tableau.com/app/profile/srikar.nalla/viz/SwiggyDataAnalysisDashboard/Dashboard1?publish=yes)
